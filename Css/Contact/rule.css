@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&family=Poppins:wght@300;800&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: grid;
+    place-items: center;
+}
+
+/* ---------- Layout ---------- */
+main {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+main #menu_side, #song_side {
+    width: calc(20% - 0.8%);
+    height: 90%;
+    /* border: 1px solid white; */
+    border-radius: 10px;
+    background:  #101010;
+    color: white;
+    margin: 0.2%;
+}
+main #song_side {
+    width: 80%;
+    background: #101010;
+    overflow: auto;
+    margin: 0.2%;
+}
+main #song_side::-webkit-scrollbar {
+    display: none;
+}
+main #master_play {
+    width: 100%;
+    height: 8.5%;
+    /* border: 1px solid white; */
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #101010, black, #101010);
+    margin: 0.2%;
+}
+
+/* ---------- Menu side ---------- */
+main #menu_side h1 {
+    font-size: 50px;
+    margin: 15px 0px 0px 20px;
+    font-weight: 1000;
+    text-align: center;
+    margin-left: -1.5%;
+    background: linear-gradient(135deg, deeppink 0%, white 50%, deeppink 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 50% 50%;
+    animation: animationName 10s ease infinite;
+}      
+@keyframes animationName {                  
+    0% {
+        background-position: 0% 50%;
+    } 50% {
+        background-position: 100% 50%;
+    } 100% {
+        background-position: 0% 50%;
+    }
+}
+
+main #menu_side .playlist {
+    margin: 50px 0px 70px 30px;
+}
+main #menu_side .playlist .menu {
+    list-style-type: none;
+    position: relative;
+}
+main #menu_side .playlist .menu li a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 20px;   
+    color: #4C5262;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: .3s linear;
+}
+main #menu_side .playlist .menu li a:hover {
+    color: white;
+}
+main #menu_side .playlist .menu li a span {
+    position: relative;
+    margin-right: 35px;
+}
+main #menu_side .playlist .menu li a span::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border: 2px solid #4C5262;
+    border-radius: 50%;
+    top: -5px;
+    transition: .3s linear;
+}
+main #menu_side .playlist .menu li a:hover span::before {
+    border: 2px solid white;
+}
+
+main #menu_side .playlist .menu li a .bi {
+    display: none;
+}
+main #menu_side .playlist .menu .active {
+    color: #FF60C7;
+}
+main #menu_side .playlist .menu .active span {
+    display: none;
+}
+main #menu_side .playlist .menu .active .bi {
+    display: flex;
+    margin-right: 20px;
+}
+
+/* ---------- Master play ---------- */
+main #master_play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main #master_play h1 {
+    font-size: 1.5em;
+    background: linear-gradient(135deg, deeppink 0%, black 50%, deeppink 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    animation: animationName 10s ease infinite;
+}      
+@keyframes animationName {                  
+    0% {
+        background-position: 0% 50%;
+    } 50% {
+        background-position: 100% 50%;
+    } 100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* ---------- Song side ---------- */
+main #song_side nav {
+    width: 80%;
+    height: 10%;
+    position: fixed;
+    /* border: 1px solid white; */
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: #1f1f1fa9;
+    backdrop-filter: blur(50px);
+    border-radius: 10px 10px 0px 0px;
+    z-index: 1000;
+}
+main #song_side nav ul {
+    display: flex;
+}
+main #song_side nav ul li {
+    list-style: none;
+}
+main #song_side nav ul li a {
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+    color: #4C5262;
+    margin-right: 35px;
+    cursor: pointer;
+    transition: .3s linear;
+}
+main #song_side nav ul li a:nth-child(1) {
+    color: white;
+}
+main #song_side nav ul li a span {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #FF60C7;
+    bottom: -10px;
+    left: 0;
+    border-radius: 20px;
+}
+
+main #song_side nav .user {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    /* border: 1px solid white; */
+    border-radius: 50%;
+}
+main #song_side nav .user img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+main #song_side .intro {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    text-align: justify;
+    /* border: 1px solid white; */
+    margin-top: 7%;
+}
+main #song_side .intro h4 {
+    font-size: 50px;
+    font-weight: 600;
+    padding: 20px 0px;
+}
+main #song_side .content {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    text-align: justify;
+    /* border: 1px solid white; */
+
+}
+
+main #song_side .content li {
+    list-style-type: none;
+    position: relative;
+    padding: 30px 0px 30px 0px;
+    display: flex;
+    align-items: center;
+
+}
+
+
+main #song_side .content li h5 {
+    font-size: 25px;
+    color: #ff00bf;
+}
+main #song_side .content li h5 .subtitle {
+    font-size: 20px;
+    color: white;
+    margin-top: 25px;
+    margin-left: 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+main #song_side .content li h5 .subtitle span {
+    color: hotpink;
+}
+main #song_side .content li .bi {
+    position: absolute;
+    right: 15px;
+    margin-top: 13px;
+}
